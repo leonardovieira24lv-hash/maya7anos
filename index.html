@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Os 7 anos da Maya 🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-warm: #FFFDF9; /* Fundo creme bem limpo e suave */
+    --peach-pastel: #FCECE5;
+    --peach-dark: #E89678;
+    --cream: #FFFFFF;
+    --gold: #FCD062;
+    --mint-pool: #76C7BE;
+    --ink: #543E37;
+    --radius: 24px;
+    --shadow: 0 8px 20px rgba(84, 62, 55, 0.05);
+  }
+
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+
+  html,body{
+    margin:0; padding:0;
+    font-family:'Nunito', sans-serif;
+    color:var(--ink);
+    background:var(--bg-warm);
+    overflow-x:hidden;
+  }
+
+  .page{
+    max-width:480px;
+    margin:0 auto;
+    min-height:100vh;
+    position:relative;
+    background: var(--bg-warm);
+    padding-bottom: 30px;
+  }
+
+  /* ---------- HERO SECTION ---------- */
+  .hero{
+    position:relative;
+    padding: 30px 24px 20px;
+    text-align:center;
+    background: #FFF5F0; /* Tom pêssego bem clarinho de fundo */
+    border-radius: 0 0 40px 40px;
+    box-shadow: var(--shadow);
+  }
+
+  /* Espaço para a SUA imagem da capivara */
+  .main-capy-box {
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto 15px;
+  }
+  .main-capy-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Banner do Nome */
+  .banner-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px 0;
+  }
+  .banner-ribbon {
+    background: var(--peach-dark);
+    color: var(--cream);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 2.6rem;
+    padding: 6px 45px;
+    text-transform: uppercase;
+    border-radius: 8px;
+  }
+
+  .age-subtitle {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.8rem;
+    color: var(--peach-dark);
+    margin: 5px 0 0;
+    font-weight: 700;
+  }
+
+  .call-to-party {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 10px 0 0;
+    opacity: 0.8;
+  }
+
+  /* ---------- CARDS & CONTENT ---------- */
+  .content{
+    padding: 20px 22px;
+  }
+
+  .card-details {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    border: 1px solid #FFF5F0;
+  }
+
+  .info-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+  }
+  .info-row + .info-row {
+    border-top: 1px dashed #F7EAE4;
+  }
+
+  .info-icon {
+    font-size: 22px;
+    background: #FFF5F0;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .info-text .label {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--peach-dark);
+    margin-bottom: 2px;
+  }
+  .info-text .val {
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+  .info-text .val small {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #8A726A;
+  }
+
+  .pool-badge {
+    background: #E8F7F5;
+    border-radius: var(--radius);
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #D6F0EC;
+  }
+  .pool-badge h3 {
+    font-family: 'Fredoka', sans-serif;
+    color: #2D7068;
+    margin: 0 0 4px;
+    font-size: 1.2rem;
+  }
+  .pool-badge p {
+    margin: 0;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #3B7A72;
+  }
+
+  .parents-alert {
+    background: #FFFDFB;
+    border: 2px dashed var(--peach-pastel);
+    border-radius: var(--radius);
+    padding: 16px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  .parents-alert b { color: var(--peach-dark); }
+
+  /* ---------- RSVP BUTTON ---------- */
+  .rsvp-btn {
+    display: block;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--cream);
+    background: var(--peach-dark);
+    padding: 16px;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(232, 150, 120, 0.2);
+    text-transform: uppercase;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px 0 10px;
+    color: var(--peach-dark);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  /* ---------- MODAL ---------- */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(84, 62, 55, 0.3); display: flex; align-items: flex-end; justify-content: center; z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
+  .modal-overlay.open { opacity: 1; pointer-events: auto; }
+  .modal { background: var(--cream); width: 100%; max-width: 480px; border-radius: 32px 32px 0 0; padding: 30px 24px; transform: translateY(40px); transition: transform 0.25s ease-out; }
+  .modal-overlay.open .modal { transform: translateY(0); }
+  .modal h2 { font-family: 'Fredoka', sans-serif; margin: 0 0 6px; text-align: center; }
+  .modal p.sub { text-align: center; margin: 0 0 20px; color: #8A726A; font-weight: 700; }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-weight: 800; font-size: 0.9rem; margin-bottom: 6px; }
+  .field input { width: 100%; padding: 14px 18px; border-radius: 16px; border: 2px solid var(--peach-pastel); font-size: 1rem; outline: none; }
+  .going-toggle { display: flex; gap: 12px; margin-bottom: 22px; }
+  .going-toggle button { flex: 1; padding: 14px; border-radius: 16px; border: 2px solid var(--peach-pastel); background: #FFF; font-family: 'Fredoka', sans-serif; font-weight: 600; cursor: pointer; }
+  .going-toggle button.selected { background: var(--peach-pastel); border-color: var(--peach-dark); }
+  .send-btn { display: block; width: 100%; border: none; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--cream); background: var(--mint-pool); padding: 16px; border-radius: 999px; cursor: pointer; }
+  .close-modal { position: absolute; top: 20px; right: 22px; background: none; border: none; font-size: 1.4rem; color: #8A726A; cursor: pointer; }
+  .success-view { text-align: center; padding: 15px 0; }
+  .success-view .name-pill { display: inline-block; background: var(--peach-pastel); padding: 6px 18px; border-radius: 999px; font-weight: 800; margin: 6px 0 16px; }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="main-capy-box">
+      <!-- MUDAR AQUI: Coloque o nome do arquivo da sua imagem no lugar de "capivara.png" -->
+      <img src="capivara.png" alt="Capivara Fofa">
+    </div>
+
+    <div class="banner-container">
+      <div class="banner-ribbon">Maya</div>
+    </div>
+    <h2 class="age-subtitle">7 ANOS</h2>
+    <p class="call-to-party">Venha comemorar comigo! 🎉</p>
+  </section>
+
+  <!-- CONTENT SECTION -->
+  <div class="content">
+    <div class="card-details">
+      <div class="info-row">
+        <div class="info-icon">📅</div>
+        <div class="info-text">
+          <div class="label">Quando será</div>
+          <div class="val">2 de Agosto <small>Domingo</small></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">⏰</div>
+        <div class="info-text">
+          <div class="label">Horário</div>
+          <div class="val">Às 12h00 <small>Preparamos um almoço delicioso!</small></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <div class="label">Onde</div>
+          <div class="val">Rua Juarez Pereira Sansão, 1250 <small>Jardim do Vale</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pool-badge">
+      <h3>🏊‍♂️ Vai ter Piscina!</h3>
+      <p>Não esqueça de trazer sua roupa de banho e uma toalha!</p>
+    </div>
+
+    <div class="parents-alert">
+      ⚠️ <b>Recado importante aos pais:</b> A festa é destinada apenas para as crianças. É só trazer os pequenos para se divertirem e buscar depois!
+    </div>
+
+    <button class="rsvp-btn" id="openModalBtn">Confirmar Presença 💕</button>
+  </div>
+
+  <footer>Espero por você! 🌸</footer>
+</div>
+
+<!-- RSVP INTERACTIVE MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="close-modal" id="closeModalBtn">✕</button>
+    <div id="formView">
+      <h2>Confirmar Presença 🌸</h2>
+      <p class="sub">Avise-nos se o(a) pequeno(a) vai participar desta linda festa!</p>
+      <div class="field">
+        <label for="childName">Nome da Criança</label>
+        <input type="text" id="childName" placeholder="Ex: Sofia" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>Vai conseguir ir? 🎉</label>
+        <div class="going-toggle">
+          <button type="button" class="going-option selected" data-value="sim">Sim, com certeza! ✨</button>
+          <button type="button" class="going-option" data-value="nao">Não vou poder 🥺</button>
+        </div>
+      </div>
+      <button class="send-btn" id="sendBtn">Enviar Confirmação</button>
+    </div>
+    <div id="successView" class="success-view" style="display:none;">
+      <h2>Confirmado! ✨</h2>
+      <p>A resposta para</p>
+      <span class="name-pill" id="confirmedName">Nome</span>
+      <p id="statusMsg">foi enviada com sucesso! Nos vemos lá! 🌸</p>
+      <button class="send-btn" id="doneBtn">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const SEU_WHATSAPP = "SEUNUMEROAQUI"; // Coloque seu número aqui
+
+  const openBtn = document.getElementById('openModalBtn');
+  const closeBtn = document.getElementById('closeModalBtn');
+  const overlay = document.getElementById('modalOverlay');
+  const sendBtn = document.getElementById('sendBtn');
+  const doneBtn = document.getElementById('doneBtn');
+  const formView = document.getElementById('formView');
+  const successView = document.getElementById('successView');
+  const nameInput = document.getElementById('childName');
+  const confirmedName = document.getElementById('confirmedName');
+  const statusMsg = document.getElementById('statusMsg');
+  const toggleButtons = document.querySelectorAll('.going-option');
+  let goingValue = 'sim';
+
+  function openModal(){ overlay.classList.add('open'); formView.style.display = 'block'; successView.style.display = 'none'; setTimeout(()=> nameInput.focus(), 250); }
+  function closeModal(){ overlay.classList.remove('open'); }
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeModal(); });
+  doneBtn.addEventListener('click', closeModal);
+
+  toggleButtons.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      toggleButtons.forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');
+      goingValue = btn.dataset.value;
+    });
+  });
+
+  sendBtn.addEventListener('click', ()=>{
+    const name = nameInput.value.trim();
+    if(!name){ nameInput.style.borderColor = 'var(--peach-dark)'; nameInput.focus(); return; }
+    confirmedName.textContent = name;
+    let mensagemWhats = "";
+    if(goingValue === 'sim'){
+      statusMsg.textContent = 'foi enviada! Nos vemos no almoço e na piscina! 💦🌸';
+      mensagemWhats = `Oi! Confirmando a presença da criança *${name}* na festa de 7 anos da Maya! 🌸✨`;
+    } else {
+      statusMsg.textContent = 'foi salva como ausente. A Maya vai sentir sua falta! 🌸';
+      mensagemWhats = `Oi! Passando para avisar que a criança *${name}* não poderá ir ao aniversário da Maya. Obrigado pelo convite! 💕`;
+    }
+    if(SEU_WHATSAPP !== "SEUNUMEROAQUI"){
+      const url = `https://wa.me/55${SEU_WHATSAPP}?text=${encodeURIComponent(mensagemWhats)}`;
+      window.open(url, '_blank');
+    }
+    formView.style.display = 'none';
+    successView.style.display = 'block';
+  });
+  nameInput.addEventListener('input', ()=>{ nameInput.style.borderColor = ''; });
+</script>
+</body>
+</html>
