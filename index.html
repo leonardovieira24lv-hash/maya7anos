@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Os 7 anos da Maya 🌸</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<!-- Importei a fonte Cherry Bomb One para o nome ficar super infantil e fofo -->
 <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -49,9 +48,10 @@
     box-shadow: var(--shadow);
   }
 
+  /* AJUSTADO: Aumentei o tamanho da caixinha da capivara */
   .main-capy-box {
     width: 100%;
-    max-width: 180px;
+    max-width: 240px; /* Era 180px, agora está maior */
     margin: 0 auto 15px;
   }
   .main-capy-box img {
@@ -60,14 +60,13 @@
     display: block;
   }
 
-  /* Formatação nova com a fonte fofinha redonda */
   .name-header {
     margin: 15px 0 5px;
   }
   .name-header h1 {
     margin: 0;
-    font-family: 'Cherry Bomb One', cursive; /* Fonte nova bem infantil */
-    font-size: 4.2rem; /* Aumentado para destacar bem */
+    font-family: 'Cherry Bomb One', cursive; 
+    font-size: 4.2rem; 
     font-weight: 400;
     color: var(--pink-dark);
     text-shadow: 3px 3px 0px var(--white);
@@ -240,11 +239,9 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="main-capy-box">
-      <!-- CORRIGIDO AQUI: Nome idêntico ao do seu GitHub (tudo minúsculo) -->
       <img src="capivara.png" alt="Capivara Fofa">
     </div>
 
-    <!-- Texto super fofo e integrado -->
     <div class="name-header">
       <h1>Maya</h1>
       <span class="age-subtitle">7 ANOS</span>
@@ -324,8 +321,8 @@
 </div>
 
 <script>
-  // COLOQUE SEU NÚMERO DE WHATSAPP AQUI (Apenas números com DDD)
-  const SEU_WHATSAPP = "SEUNUMEROAQUI"; 
+  // AJUSTADO: Seu número já está configurado certinho aqui
+  const SEU_WHATSAPP = "27996343275"; 
 
   const openBtn = document.getElementById('openModalBtn');
   const closeBtn = document.getElementById('closeModalBtn');
@@ -367,7 +364,7 @@
       statusMsg.textContent = 'foi salva como ausente. A Maya vai sentir sua falta! 🌸';
       mensagemWhats = `Oi! Passando para avisar que a criança *${name}* não poderá ir ao aniversário da Maya. Obrigado pelo convite! 💕`;
     }
-    if(SEU_WHATSAPP !== "27996343275){
+    if(SEU_WHATSAPP !== "SEUNUMEROAQUI"){
       const url = `https://wa.me/55${SEU_WHATSAPP}?text=${encodeURIComponent(mensagemWhats)}`;
       window.open(url, '_blank');
     }
