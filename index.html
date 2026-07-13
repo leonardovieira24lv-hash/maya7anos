@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Os 7 anos da Maya 🌸</title>
 
-<!-- TEXTO COMPLETO E DETALHADO PARA O BALÃO DE PREVIEW DO WHATSAPP -->
-<meta property="og:title" content="Aniversário de 7 anos da Maya! 🌸✨">
+<!-- CONFIGURAÇÃO EXCLUSIVA PARA O PREVIEW DO WHATSAPP -->
+<meta property="og:title" content="Convite Oficial: Aniversário de 7 anos da Maya! 🌸✨">
 <meta property="og:description" content="Clique aqui para abrir o convite, ver os detalhes da festa na piscina e confirmar a presença! 💕">
 <meta property="og:image" content="https://maya7anos.vercel.app/capivara.png">
 <meta property="og:type" content="website">
@@ -56,10 +56,9 @@
     box-shadow: var(--shadow);
   }
 
-  /* AJUSTADO: Capivara ainda maior no topo */
   .main-capy-box {
     width: 100%;
-    max-width: 290px; /* Aumentado para dar mais destaque */
+    max-width: 290px; 
     margin: 0 auto 15px;
   }
   .main-capy-box img {
@@ -70,11 +69,12 @@
 
   .name-header {
     margin: 15px 0 5px;
+    position: relative;
   }
   .name-header h1 {
     margin: 0;
     font-family: 'Cherry Bomb One', cursive; 
-    font-size: 4.2rem; 
+    font-size: 4.5rem; 
     font-weight: 400;
     color: var(--pink-dark);
     text-shadow: 3px 3px 0px var(--white);
@@ -83,20 +83,28 @@
   }
   .name-header .age-subtitle {
     display: block;
-    font-family: 'Fredoka', sans-serif;
-    font-size: 1.6rem;
+    font-family: 'Cherry Bomb One', cursive; /* Mudado para a mesma fonte infantil */
+    font-size: 2.2rem;
     color: var(--pink-deep);
-    font-weight: 700;
-    margin-top: 10px;
-    letter-spacing: 3px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    text-shadow: 1.5px 1.5px 0px var(--white);
   }
 
   .call-to-party {
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-family: 'Fredoka', sans-serif; /* Fonte mais arredondada */
+    font-size: 1.25rem;
+    font-weight: 600;
     margin: 15px 0 0;
-    color: var(--ink);
-    opacity: 0.8;
+    color: var(--pink-deep);
+  }
+
+  /* Estrelinhas de fundo no topo */
+  .star-decor {
+    position: absolute;
+    color: #FCD062;
+    font-size: 16px;
+    opacity: 0.5;
   }
 
   /* ---------- CARDS & CONTENT ---------- */
@@ -121,6 +129,40 @@
   }
   .info-row + .info-row {
     border-top: 1px dashed #FFE1E5;
+  }
+
+  /* ÍCONE DE CALENDÁRIO CUSTOMIZADO E CORRETO */
+  .calendar-custom {
+    width: 46px;
+    height: 46px;
+    background: #FFF;
+    border: 2.5px solid var(--pink-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(246, 146, 167, 0.1);
+  }
+  .calendar-custom .cal-top {
+    background: var(--pink-dark);
+    color: #FFF;
+    width: 100%;
+    font-size: 9px;
+    font-weight: 800;
+    text-align: center;
+    padding: 2px 0;
+    font-family: 'Fredoka', sans-serif;
+    text-transform: uppercase;
+  }
+  .calendar-custom .cal-body {
+    color: var(--ink);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.1;
+    font-family: 'Fredoka', sans-serif;
   }
 
   .info-icon {
@@ -246,27 +288,36 @@
 <div class="page">
   <!-- HERO SECTION -->
   <section class="hero">
+    <!-- Background Stars -->
+    <div class="star-decor" style="top: 15%; left: 12%;">⭐</div>
+    <div class="star-decor" style="top: 35%; right: 15%;">⭐</div>
+
     <div class="main-capy-box">
       <img src="capivara.png" alt="Capivara Fofa">
     </div>
 
     <div class="name-header">
       <h1>Maya</h1>
-      <span class="age-subtitle">7 ANOS</span>
+      <span class="age-subtitle">7 Anos</span>
     </div>
-    <p class="call-to-party">Venha comemorar comigo! 🎉</p>
+    <p class="call-to-party">Venha comemorar comigo! 🥳🎉</p>
   </section>
 
   <!-- CONTENT SECTION -->
   <div class="content">
     <div class="card-details">
+      <!-- LINHA DE EVENTO COM O CALENDÁRIO CORRIGIDO PARA 02 AGO -->
       <div class="info-row">
-        <div class="info-icon">📅</div>
+        <div class="calendar-custom">
+          <div class="cal-top">Ago</div>
+          <div class="cal-body">02</div>
+        </div>
         <div class="info-text">
           <div class="label">Quando será</div>
           <div class="val">2 de Agosto <small>Domingo</small></div>
         </div>
       </div>
+      
       <div class="info-row">
         <div class="info-icon">⏰</div>
         <div class="info-text">
