@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg-warm: #FFF8F9; 
+    --bg-warm: #FFF6F7; 
     --pink-light: #FFE3E7; 
     --pink-dark: #F692A7; 
     --pink-deep: #D15F76; 
@@ -24,7 +24,7 @@
     --mint-pool: #76C7BE;
     --ink: #4A3538; 
     --radius: 24px;
-    --shadow: 0 12px 28px rgba(246, 146, 167, 0.1);
+    --shadow: 0 12px 28px rgba(246, 146, 167, 0.12);
   }
 
   *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
@@ -49,17 +49,28 @@
   /* ---------- HERO SECTION ---------- */
   .hero{
     position:relative;
-    padding: 35px 24px 25px;
+    padding: 35px 24px 40px;
     text-align:center;
     background: linear-gradient(180deg, #FFF0F2 0%, #FFE1E5 100%); 
     border-radius: 0 0 40px 40px;
     box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  /* SVG Elements decorativos absolutos de fundo */
+  .bg-decor {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.7;
   }
 
   .main-capy-box {
+    position: relative;
     width: 100%;
     max-width: 290px; 
     margin: 0 auto 15px;
+    z-index: 2;
   }
   .main-capy-box img {
     width: 100%;
@@ -70,6 +81,7 @@
   .name-header {
     margin: 15px 0 5px;
     position: relative;
+    z-index: 2;
   }
   .name-header h1 {
     margin: 0;
@@ -83,7 +95,7 @@
   }
   .name-header .age-subtitle {
     display: block;
-    font-family: 'Cherry Bomb One', cursive; /* Mudado para a mesma fonte infantil */
+    font-family: 'Cherry Bomb One', cursive; 
     font-size: 2.2rem;
     color: var(--pink-deep);
     margin-top: 5px;
@@ -92,33 +104,43 @@
   }
 
   .call-to-party {
-    font-family: 'Fredoka', sans-serif; /* Fonte mais arredondada */
+    position: relative;
+    z-index: 2;
+    font-family: 'Fredoka', sans-serif; 
     font-size: 1.25rem;
     font-weight: 600;
     margin: 15px 0 0;
     color: var(--pink-deep);
   }
 
-  /* Estrelinhas de fundo no topo */
-  .star-decor {
+  /* Divisor de onda em SVG no final do topo */
+  .wave-divider {
     position: absolute;
-    color: #FCD062;
-    font-size: 16px;
-    opacity: 0.5;
+    bottom: 0; left: 0; width: 100%;
+    line-height: 0; transform: rotate(180deg);
   }
+  .wave-divider svg {
+    position: relative; display: block;
+    width: calc(100% + 1.3px); height: 25px;
+  }
+  .wave-divider .shape-fill { fill: var(--bg-warm); }
 
   /* ---------- CARDS & CONTENT ---------- */
   .content{
-    padding: 20px 22px;
+    padding: 25px 22px;
+    position: relative;
   }
 
   .card-details {
+    position: relative;
     background: var(--cream);
     border-radius: var(--radius);
     padding: 22px;
     box-shadow: var(--shadow);
     margin-bottom: 20px;
     border: 1px solid #FFEBF0;
+    z-index: 2;
+    overflow: hidden;
   }
 
   .info-row {
@@ -126,12 +148,13 @@
     align-items: center;
     gap: 16px;
     padding: 14px 0;
+    position: relative;
+    z-index: 2;
   }
   .info-row + .info-row {
     border-top: 1px dashed #FFE1E5;
   }
 
-  /* ÍCONE DE CALENDÁRIO CUSTOMIZADO E CORRETO */
   .calendar-custom {
     width: 46px;
     height: 46px;
@@ -196,25 +219,30 @@
   }
 
   .pool-badge {
-    background: #E8F7F5;
+    position: relative;
+    background: linear-gradient(135deg, #E8F7F5, #CEEFEA);
     border-radius: var(--radius);
-    padding: 18px;
+    padding: 20px;
     text-align: center;
     margin-bottom: 20px;
     border: 1px solid #D6F0EC;
-    box-shadow: 0 8px 20px rgba(118, 199, 190, 0.08);
+    box-shadow: 0 8px 20px rgba(118, 199, 190, 0.1);
+    overflow: hidden;
+    z-index: 2;
   }
   .pool-badge h3 {
     font-family: 'Fredoka', sans-serif;
     color: #2D7068;
     margin: 0 0 4px;
     font-size: 1.25rem;
+    position: relative; z-index: 2;
   }
   .pool-badge p {
     margin: 0;
     font-weight: 700;
     font-size: 0.95rem;
     color: #3B7A72;
+    position: relative; z-index: 2;
   }
 
   .parents-alert {
@@ -228,6 +256,8 @@
     text-align: center;
     margin-bottom: 25px;
     color: #6E5356;
+    position: relative;
+    z-index: 2;
   }
   .parents-alert b { color: var(--pink-dark); }
 
@@ -248,6 +278,8 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.1s;
+    position: relative;
+    z-index: 2;
   }
   .rsvp-btn:active {
     transform: translateY(4px);
@@ -288,9 +320,24 @@
 <div class="page">
   <!-- HERO SECTION -->
   <section class="hero">
-    <!-- Background Stars -->
-    <div class="star-decor" style="top: 15%; left: 12%;">⭐</div>
-    <div class="star-decor" style="top: 35%; right: 15%;">⭐</div>
+    
+    <!-- ELEMENTO SVG 1: Balões de Festa de Coração (Lado Esquerdo) -->
+    <svg class="bg-decor" style="top: 20px; left: -10px; width: 80px; height: 120px;" viewBox="0 0 80 120">
+      <path d="M25,40 C25,20 45,20 45,35 C45,20 65,20 65,40 C65,55 45,70 45,75 Z" fill="#FFAEC1"/>
+      <path d="M10,65 C10,50 25,50 25,62 C25,50 40,50 40,65 C40,78 25,90 25,95 Z" fill="#FCD062"/>
+      <path d="M45,75 Q42,95 35,115 M25,95 Q27,105 32,115" stroke="#4A3538" stroke-width="1.5" fill="none"/>
+    </svg>
+
+    <!-- ELEMENTO SVG 2: Estrelinhas Piscantes (Lado Direito) -->
+    <svg class="bg-decor" style="top: 40px; right: 15px; width: 60px; height: 60px;" viewBox="0 0 60 60">
+      <polygon points="30,5 34,18 47,18 37,27 41,40 30,32 19,40 23,27 13,18 26,18" fill="#FCD062" />
+      <polygon points="50,42 52,47 57,47 53,50 55,55 50,52 45,55 47,50 43,47 48,47" fill="#FFAEC1" />
+    </svg>
+
+    <!-- ELEMENTO SVG 3: Nuvens Fofas de Fundo -->
+    <svg class="bg-decor" style="bottom: 40px; left: -20px; width: 100px; height: 50px; opacity: 0.4;" viewBox="0 0 100 50">
+      <path d="M20,40 A15,15 0 0,1 40,25 A20,20 0 0,1 75,25 A15,15 0 0,1 90,40 Z" fill="#FFFFFF"/>
+    </svg>
 
     <div class="main-capy-box">
       <img src="capivara.png" alt="Capivara Fofa">
@@ -301,12 +348,24 @@
       <span class="age-subtitle">7 Anos</span>
     </div>
     <p class="call-to-party">Venha comemorar comigo! 🥳🎉</p>
+
+    <!-- Divisor com Formato de Onda em SVG -->
+    <div class="wave-divider">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
+    </div>
   </section>
 
   <!-- CONTENT SECTION -->
   <div class="content">
+
+    <!-- ELEMENTO SVG 4: Folha Tropical de Palmeira atrás do card -->
+    <svg class="bg-decor" style="top: -15px; right: -10px; width: 90px; height: 90px; opacity: 0.25; transform: rotate(45deg);" viewBox="0 0 100 100">
+      <path d="M10,90 Q50,50 90,10 M90,10 Q65,40 50,65 M90,10 Q50,25 25,50 M70,25 Q45,45 15,75" stroke="#76C7BE" stroke-width="4" stroke-linecap="round" fill="none"/>
+    </svg>
+
     <div class="card-details">
-      <!-- LINHA DE EVENTO COM O CALENDÁRIO CORRIGIDO PARA 02 AGO -->
       <div class="info-row">
         <div class="calendar-custom">
           <div class="cal-top">Ago</div>
@@ -335,6 +394,10 @@
     </div>
 
     <div class="pool-badge">
+      <!-- ELEMENTO SVG 5: Ondas da Piscina sutil de fundo na caixa da piscina -->
+      <svg style="position: absolute; bottom: 0; left: 0; width: 100%; height: 20px; opacity: 0.3;" viewBox="0 0 100 20" preserveAspectRatio="none">
+        <path d="M0,10 Q25,5 50,10 T100,10 L100,20 L0,20 Z" fill="#76C7BE"/>
+      </svg>
       <h3>🏊‍♂️ Vai ter Piscina!</h3>
       <p>Não esqueça de trazer sua roupa de banho e uma toalha!</p>
     </div>
@@ -342,6 +405,11 @@
     <div class="parents-alert">
       ⚠️ <b>Recado importante aos pais:</b> A festa é destinada apenas para as crianças. É só trazer os pequenos para se divertirem e buscar depois! Deixem a diversão com a gente. 💛
     </div>
+
+    <!-- ELEMENTO SVG 6: Mini Estrelinha fofa brilhando em cima do botão -->
+    <svg class="bg-decor" style="bottom: 75px; left: 25px; width: 20px; height: 20px;" viewBox="0 0 20 20">
+      <polygon points="10,1 12,6 18,6 13,10 15,16 10,12 5,16 7,10 2,6 8,6" fill="#FCD062"/>
+    </svg>
 
     <button class="rsvp-btn" id="openModalBtn">Confirmar Presença 💕</button>
   </div>
