@@ -4,25 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Os 7 anos da Maya 🌸</title>
-<!-- Configurações para aparecer a foto e o texto no preview do WhatsApp -->
-<meta property="og:title" content="Os 7 anos da Maya 🌸">
-<meta property="og:description" content="Venha comemorar comigo! Clique para ver os detalhes e confirmar sua presença. 💕">
-<meta property="og:image" content="https://maya7anos.vercel.app/capivara.png">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://maya7anos.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg-warm: #FFFDF9; /* Fundo creme bem limpo e suave */
-    --peach-pastel: #FCECE5;
-    --peach-dark: #E89678;
+    --bg-warm: #FFF8F9; /* Fundo creme bem suave com leve toque rosado */
+    --pink-light: #FFE3E7; /* Rosa pastel para os detalhes de fundo */
+    --pink-dark: #F692A7; /* Rosa chiclete aceso para substituir o laranja */
+    --pink-deep: #D15F76; /* Rosa mais escuro para textos pequenos */
     --cream: #FFFFFF;
-    --gold: #FCD062;
     --mint-pool: #76C7BE;
-    --ink: #543E37;
+    --ink: #4A3538; /* Texto em tom marrom rosado bem escuro, mais suave que o preto */
     --radius: 24px;
-    --shadow: 0 8px 20px rgba(84, 62, 55, 0.05);
+    --shadow: 0 12px 28px rgba(246, 146, 167, 0.1);
   }
 
   *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
@@ -47,18 +41,17 @@
   /* ---------- HERO SECTION ---------- */
   .hero{
     position:relative;
-    padding: 30px 24px 20px;
+    padding: 35px 24px 25px;
     text-align:center;
-    background: #FFF5F0; /* Tom pêssego bem clarinho de fundo */
+    background: linear-gradient(180deg, #FFF0F2 0%, #FFE1E5 100%); /* Degradê suave rosa */
     border-radius: 0 0 40px 40px;
     box-shadow: var(--shadow);
   }
 
-  /* Espaço para a SUA imagem da capivara */
   .main-capy-box {
     width: 100%;
     max-width: 180px;
-    margin: 0 auto 15px;
+    margin: 0 auto 10px;
   }
   .main-capy-box img {
     width: 100%;
@@ -66,35 +59,36 @@
     display: block;
   }
 
-  /* Banner do Nome */
-  .banner-container {
-    position: relative;
-    display: inline-block;
-    margin: 10px 0;
+  /* Nova formatação do nome: Texto integrado, fluido e com contorno infantil */
+  .name-header {
+    font-family: 'Fredoka', sans-serif;
+    margin: 15px 0 5px;
   }
-  .banner-ribbon {
-    background: var(--peach-dark);
+  .name-header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: 700;
     color: var(--cream);
-    font-family: 'Fredoka', sans-serif;
-    font-weight: 700;
-    font-size: 2.6rem;
-    padding: 6px 45px;
     text-transform: uppercase;
-    border-radius: 8px;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 2px var(--pink-dark); /* Borda estilizada nas letras */
+    text-shadow: 3px 3px 0px var(--pink-dark);
+    line-height: 1;
   }
-
-  .age-subtitle {
-    font-family: 'Fredoka', sans-serif;
+  .name-header .age-subtitle {
+    display: block;
     font-size: 1.8rem;
-    color: var(--peach-dark);
-    margin: 5px 0 0;
+    color: var(--pink-dark);
     font-weight: 700;
+    margin-top: 8px;
+    letter-spacing: 2px;
   }
 
   .call-to-party {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    margin: 10px 0 0;
+    margin: 12px 0 0;
+    color: var(--ink);
     opacity: 0.8;
   }
 
@@ -106,26 +100,26 @@
   .card-details {
     background: var(--cream);
     border-radius: var(--radius);
-    padding: 20px;
+    padding: 22px;
     box-shadow: var(--shadow);
     margin-bottom: 20px;
-    border: 1px solid #FFF5F0;
+    border: 1px solid #FFEBF0;
   }
 
   .info-row {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 12px 0;
+    padding: 14px 0;
   }
   .info-row + .info-row {
-    border-top: 1px dashed #F7EAE4;
+    border-top: 1px dashed #FFE1E5;
   }
 
   .info-icon {
     font-size: 22px;
-    background: #FFF5F0;
-    width: 44px; height: 44px;
+    background: #FFF0F2;
+    width: 46px; height: 46px;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
@@ -135,53 +129,58 @@
     font-family: 'Fredoka', sans-serif;
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: var(--peach-dark);
+    color: var(--pink-dark);
+    font-weight: 600;
+    letter-spacing: 0.5px;
     margin-bottom: 2px;
   }
   .info-text .val {
     font-weight: 800;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
   .info-text .val small {
     display: block;
     font-weight: 600;
-    font-size: 0.85rem;
-    color: #8A726A;
+    font-size: 0.88rem;
+    color: var(--pink-deep);
+    opacity: 0.8;
   }
 
   .pool-badge {
     background: #E8F7F5;
     border-radius: var(--radius);
-    padding: 16px;
+    padding: 18px;
     text-align: center;
     margin-bottom: 20px;
     border: 1px solid #D6F0EC;
+    box-shadow: 0 8px 20px rgba(118, 199, 190, 0.08);
   }
   .pool-badge h3 {
     font-family: 'Fredoka', sans-serif;
     color: #2D7068;
     margin: 0 0 4px;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
   .pool-badge p {
     margin: 0;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #3B7A72;
   }
 
   .parents-alert {
     background: #FFFDFB;
-    border: 2px dashed var(--peach-pastel);
+    border: 2px dashed var(--pink-light);
     border-radius: var(--radius);
-    padding: 16px;
-    font-size: 0.9rem;
+    padding: 18px;
+    font-size: 0.92rem;
     line-height: 1.4;
     font-weight: 700;
     text-align: center;
     margin-bottom: 25px;
+    color: #6E5356;
   }
-  .parents-alert b { color: var(--peach-dark); }
+  .parents-alert b { color: var(--pink-dark); }
 
   /* ---------- RSVP BUTTON ---------- */
   .rsvp-btn {
@@ -191,40 +190,48 @@
     cursor: pointer;
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--cream);
-    background: var(--peach-dark);
-    padding: 16px;
+    background: linear-gradient(135deg, #FFAEC1, var(--pink-dark));
+    padding: 18px;
     border-radius: 999px;
-    box-shadow: 0 4px 12px rgba(232, 150, 120, 0.2);
+    box-shadow: 0 6px 0 #D16E84, 0 12px 24px rgba(246, 146, 167, 0.25);
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.1s;
+  }
+  .rsvp-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #D16E84, 0 4px 10px rgba(246, 146, 167, 0.25);
   }
 
   footer {
     text-align: center;
     padding: 20px 0 10px;
-    color: var(--peach-dark);
+    color: var(--pink-dark);
     font-size: 0.85rem;
     font-weight: 700;
+    opacity: 0.7;
   }
 
   /* ---------- MODAL ---------- */
-  .modal-overlay { position: fixed; inset: 0; background: rgba(84, 62, 55, 0.3); display: flex; align-items: flex-end; justify-content: center; z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
+  .modal-overlay { position: fixed; inset: 0; background: rgba(84, 62, 55, 0.35); backdrop-filter: blur(2px); display: flex; align-items: flex-end; justify-content: center; z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
   .modal-overlay.open { opacity: 1; pointer-events: auto; }
   .modal { background: var(--cream); width: 100%; max-width: 480px; border-radius: 32px 32px 0 0; padding: 30px 24px; transform: translateY(40px); transition: transform 0.25s ease-out; }
   .modal-overlay.open .modal { transform: translateY(0); }
-  .modal h2 { font-family: 'Fredoka', sans-serif; margin: 0 0 6px; text-align: center; }
-  .modal p.sub { text-align: center; margin: 0 0 20px; color: #8A726A; font-weight: 700; }
+  .modal h2 { font-family: 'Fredoka', sans-serif; margin: 0 0 6px; text-align: center; color: var(--ink); }
+  .modal p.sub { text-align: center; margin: 0 0 20px; color: var(--pink-deep); font-weight: 700; }
   .field { margin-bottom: 16px; }
   .field label { display: block; font-weight: 800; font-size: 0.9rem; margin-bottom: 6px; }
-  .field input { width: 100%; padding: 14px 18px; border-radius: 16px; border: 2px solid var(--peach-pastel); font-size: 1rem; outline: none; }
+  .field input { width: 100%; padding: 14px 18px; border-radius: 16px; border: 2px solid var(--pink-light); font-size: 1rem; outline: none; }
+  .field input:focus { border-color: var(--pink-dark); }
   .going-toggle { display: flex; gap: 12px; margin-bottom: 22px; }
-  .going-toggle button { flex: 1; padding: 14px; border-radius: 16px; border: 2px solid var(--peach-pastel); background: #FFF; font-family: 'Fredoka', sans-serif; font-weight: 600; cursor: pointer; }
-  .going-toggle button.selected { background: var(--peach-pastel); border-color: var(--peach-dark); }
-  .send-btn { display: block; width: 100%; border: none; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--cream); background: var(--mint-pool); padding: 16px; border-radius: 999px; cursor: pointer; }
+  .going-toggle button { flex: 1; padding: 14px; border-radius: 16px; border: 2px solid var(--pink-light); background: #FFF; font-family: 'Fredoka', sans-serif; font-weight: 600; cursor: pointer; color: var(--ink); }
+  .going-toggle button.selected { background: var(--pink-light); border-color: var(--pink-dark); font-weight: 700; }
+  .send-btn { display: block; width: 100%; border: none; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--cream); background: var(--mint-pool); padding: 16px; border-radius: 999px; box-shadow: 0 5px 0 #3D8279; cursor: pointer; }
   .close-modal { position: absolute; top: 20px; right: 22px; background: none; border: none; font-size: 1.4rem; color: #8A726A; cursor: pointer; }
   .success-view { text-align: center; padding: 15px 0; }
-  .success-view .name-pill { display: inline-block; background: var(--peach-pastel); padding: 6px 18px; border-radius: 999px; font-weight: 800; margin: 6px 0 16px; }
+  .success-view .name-pill { display: inline-block; background: var(--pink-light); padding: 6px 18px; border-radius: 999px; font-weight: 800; margin: 6px 0 16px; }
 </style>
 </head>
 <body>
@@ -233,14 +240,14 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="main-capy-box">
-      <!-- MUDAR AQUI: Coloque o nome do arquivo da sua imagem no lugar de "capivara.png" -->
-      <img src="capivara.png" alt="Capivara Fofa">
+      <img src="Capivara.png" alt="Capivara Fofa">
     </div>
 
-    <div class="banner-container">
-      <div class="banner-ribbon">Maya</div>
+    <!-- Nova formatação de texto do topo -->
+    <div class="name-header">
+      <h1>Maya</h1>
+      <span class="age-subtitle">7 ANOS</span>
     </div>
-    <h2 class="age-subtitle">7 ANOS</h2>
     <p class="call-to-party">Venha comemorar comigo! 🎉</p>
   </section>
 
@@ -276,7 +283,7 @@
     </div>
 
     <div class="parents-alert">
-      ⚠️ <b>Recado importante aos pais:</b> A festa é destinada apenas para as crianças. É só trazer os pequenos para se divertirem e buscar depois!
+      ⚠️ <b>Recado importante aos pais:</b> A festa é destinada apenas para as crianças. É só trazer os pequenos para se divertirem e buscar depois! Deixem a diversão com a gente. 💛
     </div>
 
     <button class="rsvp-btn" id="openModalBtn">Confirmar Presença 💕</button>
@@ -316,7 +323,8 @@
 </div>
 
 <script>
-  const SEU_WHATSAPP = "SEUNUMEROAQUI"; // Coloque seu número aqui
+  // COLOQUE SEU NÚMERO DE WHATSAPP AQUI (Apenas números com DDD)
+  const SEU_WHATSAPP = "SEUNUMEROAQUI"; 
 
   const openBtn = document.getElementById('openModalBtn');
   const closeBtn = document.getElementById('closeModalBtn');
@@ -348,7 +356,7 @@
 
   sendBtn.addEventListener('click', ()=>{
     const name = nameInput.value.trim();
-    if(!name){ nameInput.style.borderColor = 'var(--peach-dark)'; nameInput.focus(); return; }
+    if(!name){ nameInput.style.borderColor = 'var(--pink-dark)'; nameInput.focus(); return; }
     confirmedName.textContent = name;
     let mensagemWhats = "";
     if(goingValue === 'sim'){
