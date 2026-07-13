@@ -44,23 +44,23 @@
     position:relative;
     background: var(--bg-warm);
     padding-bottom: 30px;
-    overflow: hidden; /* Garante que os balões sumam ao sair da tela */
+    overflow: hidden; 
   }
 
-  /* ---------- ANIMAÇÃO DE BALÕES SUBINDO PELO FUNDO ---------- */
+  /* ---------- AJUSTADO: BALÕES AGORA PASSAM POR CIMA DOS CARDS ---------- */
   .balloon-bg-container {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     overflow: hidden;
-    pointer-events: none;
-    z-index: 1; /* Fica por trás de todos os cards e textos */
+    pointer-events: none; /* Isso garante que a pessoa consiga clicar nos botões mesmo com o balão passando por cima */
+    z-index: 10; /* Subiu para cima dos cards */
   }
 
   .floating-balloon {
     position: absolute;
-    bottom: -150px;
-    opacity: 0.25; /* Bem suave para não atrapalhar a leitura */
+    bottom: -100px;
+    opacity: 0.15; /* Deixei mais transparente para ficar bem sutil por cima do texto */
     animation: riseUp 12s linear infinite;
   }
 
@@ -70,10 +70,10 @@
       opacity: 0;
     }
     10% {
-      opacity: 0.25;
+      opacity: 0.15;
     }
     90% {
-      opacity: 0.25;
+      opacity: 0.15;
     }
     100% {
       transform: translateY(-130vh) rotate(20deg);
@@ -360,30 +360,30 @@
 
 <div class="page">
   
-  <!-- CONTÊINER DOS BALÕES FLUTUANTES DO FUNDO (SVG + Animação CSS) -->
+  <!-- CONTAINER DOS BALÕES FLUTUANTES (Agora na camada superior Z-INDEX: 10) -->
   <div class="balloon-bg-container">
     <!-- Balão Rosa 1 -->
-    <svg class="floating-balloon" style="left: 10%; animation-delay: 0s; animation-duration: 14s; width: 45px; height: 70px;" viewBox="0 0 40 60">
+    <svg class="floating-balloon" style="left: 8%; animation-delay: 0s; animation-duration: 15s; width: 42px; height: 65px;" viewBox="0 0 40 60">
       <ellipse cx="20" cy="25" rx="18" ry="22" fill="#FFAEC1" stroke="#4A3538" stroke-width="1"/>
       <path d="M20,47 Q18,60 12,70" stroke="#4A3538" stroke-width="1" fill="none"/>
     </svg>
     <!-- Balão Amarelo 1 -->
-    <svg class="floating-balloon" style="left: 40%; animation-delay: 3s; animation-duration: 11s; width: 35px; height: 55px;" viewBox="0 0 40 60">
+    <svg class="floating-balloon" style="left: 38%; animation-delay: 3s; animation-duration: 12s; width: 35px; height: 55px;" viewBox="0 0 40 60">
       <ellipse cx="20" cy="25" rx="18" ry="22" fill="#FCD062" stroke="#4A3538" stroke-width="1"/>
       <path d="M20,47 Q22,58 25,70" stroke="#4A3538" stroke-width="1" fill="none"/>
     </svg>
     <!-- Balão Menta 1 -->
-    <svg class="floating-balloon" style="left: 75%; animation-delay: 1.5s; animation-duration: 13s; width: 40px; height: 65px;" viewBox="0 0 40 60">
+    <svg class="floating-balloon" style="left: 78%; animation-delay: 1.5s; animation-duration: 14s; width: 38px; height: 62px;" viewBox="0 0 40 60">
       <ellipse cx="20" cy="25" rx="18" ry="22" fill="#C5EBE7" stroke="#4A3538" stroke-width="1"/>
       <path d="M20,47 Q17,60 22,70" stroke="#4A3538" stroke-width="1" fill="none"/>
     </svg>
-    <!-- Balão Rosa 2 (Mais alto e rápido) -->
-    <svg class="floating-balloon" style="left: 25%; animation-delay: 6s; animation-duration: 12s; width: 38px; height: 60px;" viewBox="0 0 40 60">
+    <!-- Balão Rosa Claro 2 -->
+    <svg class="floating-balloon" style="left: 22%; animation-delay: 6s; animation-duration: 13s; width: 36px; height: 58px;" viewBox="0 0 40 60">
       <ellipse cx="20" cy="25" rx="18" ry="22" fill="#FFE3E7" stroke="#4A3538" stroke-width="1"/>
       <path d="M20,47 Q20,58 15,70" stroke="#4A3538" stroke-width="1" fill="none"/>
     </svg>
     <!-- Balão Menta 2 -->
-    <svg class="floating-balloon" style="left: 60%; animation-delay: 8s; animation-duration: 15s; width: 42px; height: 68px;" viewBox="0 0 40 60">
+    <svg class="floating-balloon" style="left: 58%; animation-delay: 8s; animation-duration: 16s; width: 40px; height: 64px;" viewBox="0 0 40 60">
       <ellipse cx="20" cy="25" rx="18" ry="22" fill="#C5EBE7" stroke="#4A3538" stroke-width="1"/>
       <path d="M20,47 Q23,59 18,70" stroke="#4A3538" stroke-width="1" fill="none"/>
     </svg>
@@ -422,6 +422,19 @@
       <path d="M38,66 Q36,85 30,105 M22,80 Q24,92 28,105" stroke="var(--ink)" stroke-width="1.5" fill="none"/>
     </svg>
 
+    <!-- Estrelinhas Cute -->
+    <svg class="bg-decor" style="top: 140px; left: 25px; width: 30px; height: 30px;" viewBox="0 0 30 30">
+      <polygon points="15,2 18,10 27,10 20,15 23,24 15,19 7,24 10,15 3,10 12,10" fill="#FCD062" />
+    </svg>
+    <svg class="bg-decor" style="top: 130px; right: 25px; width: 25px; height: 25px;" viewBox="0 0 25 25">
+      <polygon points="12,2 14,8 21,8 16,12 18,19 12,15 6,19 8,12 3,8 9,8" fill="#F692A7" />
+    </svg>
+
+    <!-- Nuvens de Fundo do Cabeçalho -->
+    <svg class="bg-decor" style="bottom: 35px; left: -10px; width: 90px; height: 45px; opacity: 0.5;" viewBox="0 0 100 50">
+      <path d="M15,35 A12,12 0 0,1 32,22 A18,18 0 0,1 65,22 A12,12 0 0,1 80,35 Z" fill="#FFFFFF"/>
+    </svg>
+
     <div class="main-capy-box">
       <img src="capivara.png" alt="Capivara Fofa">
     </div>
@@ -432,6 +445,7 @@
     </div>
     <p class="call-to-party">Venha comemorar comigo! 🥳🎉</p>
 
+    <!-- Divisor com Formato de Onda em SVG -->
     <div class="wave-divider">
       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
@@ -447,6 +461,11 @@
       <path d="M40,45 L40,75" stroke="var(--ink)" stroke-width="3"/>
       <path d="M15,45 C15,25 65,25 65,45 Z" fill="#F692A7" stroke="var(--ink)" stroke-width="1.5"/>
       <path d="M25,45 C30,35 40,25 40,25 C40,25 50,35 55,45" fill="none" stroke="#FFF" stroke-width="4"/>
+    </svg>
+
+    <!-- Folha Tropical de Palmeira -->
+    <svg class="bg-decor" style="top: 200px; left: -15px; width: 80px; height: 80px; opacity: 0.2; transform: rotate(-30deg);" viewBox="0 0 100 100">
+      <path d="M10,90 Q50,50 90,10 M90,10 Q65,40 50,65 M90,10 Q50,25 25,50 M70,25 Q45,45 15,75" stroke="#76C7BE" stroke-width="4" stroke-linecap="round" fill="none"/>
     </svg>
 
     <div class="card-details">
@@ -478,9 +497,16 @@
     </div>
 
     <div class="pool-badge">
+      <!-- Ondas da Piscina -->
       <svg style="position: absolute; bottom: 0; left: 0; width: 100%; height: 20px; opacity: 0.35;" viewBox="0 0 100 20" preserveAspectRatio="none">
         <path d="M0,10 Q25,5 50,10 T100,10 L100,20 L0,20 Z" fill="#76C7BE"/>
       </svg>
+      <!-- Boia de capivara nadando -->
+      <svg class="bg-decor" style="top: 5px; right: 15px; width: 45px; height: 45px; opacity: 0.25;" viewBox="0 0 60 60">
+        <circle cx="30" cy="35" r="18" fill="none" stroke="#F692A7" stroke-width="8"/>
+        <path d="M42,25 C48,25 52,18 50,12 C48,8 42,12 40,18" fill="#D99B82" stroke="var(--ink)" stroke-width="1.5"/>
+      </svg>
+
       <h3>🏊‍♂️ Vai ter Piscina!</h3>
       <p>Não esqueça de trazer sua roupa de banho e uma toalha!</p>
     </div>
@@ -488,6 +514,14 @@
     <div class="parents-alert">
       ⚠️ <b>Recado importante aos pais:</b> A festa é destinada apenas para as crianças. É só trazer os pequenos para se divertirem e buscar depois! Deixem a diversão com a gente. 💛
     </div>
+
+    <!-- Duas estrelinhas brilhando em cima do botão -->
+    <svg class="bg-decor" style="bottom: 75px; left: 20px; width: 22px; height: 22px;" viewBox="0 0 20 20">
+      <polygon points="10,1 12,6 18,6 13,10 15,16 10,12 5,16 7,10 2,6 8,6" fill="#FCD062" stroke="var(--ink)" stroke-width="0.5"/>
+    </svg>
+    <svg class="bg-decor" style="bottom: 85px; right: 25px; width: 16px; height: 16px;" viewBox="0 0 20 20">
+      <polygon points="10,1 12,6 18,6 13,10 15,16 10,12 5,16 7,10 2,6 8,6" fill="#FFAEC1" />
+    </svg>
 
     <button class="rsvp-btn" id="openModalBtn">Confirmar Presença 💕</button>
   </div>
