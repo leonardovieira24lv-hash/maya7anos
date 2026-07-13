@@ -48,10 +48,9 @@
     box-shadow: var(--shadow);
   }
 
-  /* AJUSTADO: Aumentei o tamanho da caixinha da capivara */
   .main-capy-box {
     width: 100%;
-    max-width: 240px; /* Era 180px, agora está maior */
+    max-width: 240px; 
     margin: 0 auto 15px;
   }
   .main-capy-box img {
@@ -230,7 +229,7 @@
   .send-btn { display: block; width: 100%; border: none; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--cream); background: var(--mint-pool); padding: 16px; border-radius: 999px; box-shadow: 0 5px 0 #3D8279; cursor: pointer; }
   .close-modal { position: absolute; top: 20px; right: 22px; background: none; border: none; font-size: 1.4rem; color: #8A726A; cursor: pointer; }
   .success-view { text-align: center; padding: 15px 0; }
-  .success-view .name-pill { display: inline-block; background: var(--pink-light); padding: 6px 18px; border-radius: 999px; font-weight: 800; margin: 6px 0 16px; }
+  .success-view .name-pill { display: inline-block; background: var(--pink-light); padding: 6px 18px; border-radius: 9999px; font-weight: 800; margin: 6px 0 16px; }
 </style>
 </head>
 <body>
@@ -321,7 +320,7 @@
 </div>
 
 <script>
-  // AJUSTADO: Seu número já está configurado certinho aqui
+  // Número e DDD configurados direto aqui
   const SEU_WHATSAPP = "27996343275"; 
 
   const openBtn = document.getElementById('openModalBtn');
@@ -357,13 +356,16 @@
     if(!name){ nameInput.style.borderColor = 'var(--pink-dark)'; nameInput.focus(); return; }
     confirmedName.textContent = name;
     let mensagemWhats = "";
+    
+    // Configuração com o nome pulado de linha, em maiúsculo e com setas gritantes
     if(goingValue === 'sim'){
       statusMsg.textContent = 'foi enviada! Nos vemos no almoço e na piscina! 💦🌸';
-      mensagemWhats = `Oi! Confirmando a presença da criança *${name}* na festa de 7 anos da Maya! 🌸✨`;
+      mensagemWhats = `Oi! Passando para confirmar presença:\n\n➡️ CONVIDADO(A): *${name.toUpperCase()}* ⬅️\n\nNa festa de 7 anos da Maya! 🌸✨`;
     } else {
       statusMsg.textContent = 'foi salva como ausente. A Maya vai sentir sua falta! 🌸';
-      mensagemWhats = `Oi! Passando para avisar que a criança *${name}* não poderá ir ao aniversário da Maya. Obrigado pelo convite! 💕`;
+      mensagemWhats = `Oi! Passando para avisar que a criança:\n\n❌ NÃO PODERÁ IR: *${name.toUpperCase()}*\n\nNo aniversário da Maya. Obrigado pelo convite! 💕`;
     }
+    
     if(SEU_WHATSAPP !== "SEUNUMEROAQUI"){
       const url = `https://wa.me/55${SEU_WHATSAPP}?text=${encodeURIComponent(mensagemWhats)}`;
       window.open(url, '_blank');
