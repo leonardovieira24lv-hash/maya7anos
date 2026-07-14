@@ -1,109 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Os 7 anos da Maya 🌸</title>
-
-<meta property="og:title" content="Convite Oficial: Aniversário de 7 anos da Maya! 🌸✨">
-<meta property="og:description" content="Clique aqui para abrir o convite, ver os detalhes da festa na piscina e confirmar a presença! 💕">
-<meta property="og:image" content="https://maya7anos.vercel.app/capivara.png">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://maya7anos.vercel.app/">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aniversário da Maya</title>
 <style>
-  :root {
-    --bg-warm: #FFF8F9; 
-    --pink-light: #FFE3E7; 
-    --pink-dark: #F692A7; 
-    --pink-deep: #D15F76; 
-    --cream: #FFFFFF;
-    --mint-pool: #76C7BE;
-    --ink: #4A3538; 
-    --radius: 24px;
-    --shadow: 0 12px 28px rgba(246, 146, 167, 0.12);
-  }
-
-  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
-
-  html,body{
-    margin:0; padding:0;
-    font-family:'Nunito', sans-serif;
-    color:var(--ink);
-    background:var(--bg-warm);
-    overflow-x:hidden;
-  }
-
-  .page{
-    max-width:480px;
-    margin:0 auto;
-    min-height:100vh;
-    position:relative;
-    background: var(--bg-warm);
-    padding-bottom: 30px;
-    overflow: hidden; 
-  }
-
-  /* ---------- AJUSTADO: BALÕES MUITO MAIS VIVOS E COLORIDOS ---------- */
-  .balloon-bg-container {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    overflow: hidden;
-    pointer-events: none; 
-    z-index: 10; 
-  }
-
-  .floating-balloon {
-    position: absolute;
-    bottom: -100px;
-    opacity: 0.65; /* Aumentado de 0.15 para 0.65 para ficarem bem vivos */
-    animation: riseUp 12s linear infinite;
-    filter: drop-shadow(0 4px 6px rgba(246, 146, 167, 0.15));
-  }
-
-  @keyframes riseUp {
-    0% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 0;
-    }
-    10% {
-      opacity: 0.65;
-    }
-    90% {
-      opacity: 0.65;
-    }
-    100% {
-      transform: translateY(-130vh) rotate(20deg);
-      opacity: 0;
-    }
-  }
-
-  /* ---------- HERO SECTION ---------- */
-  .hero{
-    position:relative;
-    padding: 45px 24px 40px;
-    text-align:center;
-    background: linear-gradient(180deg, #FFF0F2 0%, #FFE1E5 100%); 
-    border-radius: 0 0 40px 40px;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    z-index: 2;
-  }
-
-  .bg-decor {
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  @keyframes floatBalloonHeader {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-6px) rotate(2deg); }
-  }
-
+body{margin:0;font-family:Arial,sans-serif;background:#fdf7f2;color:#5a4a42}
+.hero{max-width:700px;margin:20px auto;padding:16px}
+img{width:100%;border-radius:24px;box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.card{background:#fff;border-radius:20px;padding:20px;margin-top:20px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.btn{display:block;text-align:center;text-decoration:none;background:#ff6fa8;color:#fff;padding:16px;border-radius:999px;font-weight:bold;margin:12px 0}
+.btn.sec{background:#8f6b53}
+#count{font-size:1.3rem;font-weight:bold;text-align:center}
+footer{text-align:center;padding:30px;color:#777}
+</style></head>
+<body>
+<div class="hero">
+<img src="convite.png" alt="Convite">
+<div class="card">
+<h2 style="text-align:center">🎉 Esperamos você!</h2>
+<p id="count"></p>
+<a class="btn" href="https://wa.me/5527999656420?text=Olá!%20Confirmo%20minha%20presença%20no%20aniversário%20da%20Maya.">💖 Confirmar Presença</a>
+<a class="btn sec" href="https://maps.google.com/?q=Rua+Juarez+Pereira+Sansão,+1250">📍 Como chegar</a>
+<p><b>Recado aos pais</b><br>Será uma alegria receber sua família para comemorar os 7 aninhos da Maya! 💕</p>
+</div>
+<footer>Feito com ❤️ para a Maya</footer>
+</div>
+<script>
+const alvo=new Date("2026-08-02T11:00:00");
+function t(){let d=alvo-new Date();if(d<0){count.textContent="É hoje! 🎉";return;}
+let dias=Math.floor(d/86400000);
+let h=Math.floor(d%86400000/3600000);
+let m=Math.floor(d%3600000/60000);
+let s=Math.floor(d%60000/1000);
+count.textContent=`Faltam ${dias} dias, ${h}h ${m}m ${s}s`;
+}
+setInterval(t,1000);t();
+</script>
+</body></html>
   .main-capy-box {
     position: relative;
     width: 100%;
